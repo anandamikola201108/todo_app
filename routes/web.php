@@ -15,8 +15,7 @@ Route::get('logout',[Todocontroller::class,'logout'])->name('logout');
 
 Route::middleware('Islogin')->prefix('/todo')->name('todo.')->group(function() {
     Route::get('/',[Todocontroller::class,'index'])->name('index');
-    Route::get ('/create',[Todocontroller::class,'create'])->name('create');
-    Route::post('/store',[Todocontroller::class,'store'])->name('store');
+   Route::post('/store',[Todocontroller::class,'store'])->name('store');
     Route::get ('/edit/{id}',[Todocontroller::class,'edit'])->name('edit');
     Route::patch('/update/{id}',[Todocontroller::class,'update'])->name('update');
     Route::delete('/destroy/{id}',[Todocontroller::class,'destroy'])->name('destroy');
